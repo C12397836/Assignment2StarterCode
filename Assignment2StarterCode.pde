@@ -6,24 +6,38 @@
     See: https://github.com/skooter500/DT228-OOP 
 */
 
-ArrayList<Player> players = new ArrayList<Player>();
+PVector gravity;
+ArrayList<GameObject> game_objects = new ArrayList<GameObject>();
 boolean[] keys = new boolean[526];
 
 void setup()
 {
   size(600, 600);
+  gravity = new PVector(0, 2);
+  
+  game_objects.add(new Background());
   setUpPlayerControllers();
 }
 
 void draw()
 {
   background(0);
-  for(Player player:players)
+  
+  // Loop through all the game objects
+  for(int i = 0; i < game_objects.size(); i++)
   {
-    player.update();
-    player.display();
-  }
-  platform();
+    
+    if(game_objects.get(i) instanceof Player)
+    {
+      //game_objects.get(i).pos.add(gravity);
+    }
+    
+    
+    game_objects.get(i).update();
+    game_objects.get(i).display();
+  } // End loop.
+  
+  
 }
 
 void keyPressed()
@@ -80,31 +94,7 @@ void setUpPlayerControllers()
     int x = (i + 1) * gap;
     p.pos.x = x;
     p.pos.y = 300;
-   players.add(p);         
+   game_objects.add(p);         
   }
 }
 
-void gravity()
-{
-  
-}
-
-void platform()
-{
-  float[] platHi = new float[0];
-  float segWidth = 5;
-  float currentHi = 500;
-  
-  while(platHi.length<width/segWidth) 
-  {
-      platHi = append(platHi, currentHi);
-      currentHi+=random(-5,5);
-  }
-  
-  fill(255);
-  noStroke();
-  for(int i = 0; i< platHi.length; i++) 
-  {
-      rect(i*segWidth, platHi[i], segWidth, height);
-  }
-}
