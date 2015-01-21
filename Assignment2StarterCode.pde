@@ -17,11 +17,13 @@ void setup()
 
 void draw()
 {
+  background(0);
   for(Player player:players)
   {
     player.update();
     player.display();
   }
+  platform();
 }
 
 void keyPressed()
@@ -79,5 +81,30 @@ void setUpPlayerControllers()
     p.pos.x = x;
     p.pos.y = 300;
    players.add(p);         
+  }
+}
+
+void gravity()
+{
+  
+}
+
+void platform()
+{
+  float[] platHi = new float[0];
+  float segWidth = 5;
+  float currentHi = 500;
+  
+  while(platHi.length<width/segWidth) 
+  {
+      platHi = append(platHi, currentHi);
+      currentHi+=random(-5,5);
+  }
+  
+  fill(255);
+  noStroke();
+  for(int i = 0; i< platHi.length; i++) 
+  {
+      rect(i*segWidth, platHi[i], segWidth, height);
   }
 }
