@@ -11,7 +11,8 @@ class Background extends GameObject
 
   void update()
   {
-    if (caveHeights.length>0) {
+    if (caveHeights.length>0) 
+    {
       caveHeights = subset(caveHeights, 5);
     }
     while (caveHeights.length < width / landSegmentWidth) 
@@ -34,7 +35,8 @@ class Background extends GameObject
   {
     stroke(255);
     fill(255); 
-    for (int i = 0; i< caveHeights.length; i++) {
+    for (int i = 0; i< caveHeights.length; i++) 
+    {
       rect(i*landSegmentWidth, 0, landSegmentWidth, height-caveHeights[i]);
       rect(i*landSegmentWidth, caveHeights[i], landSegmentWidth, height);
     }

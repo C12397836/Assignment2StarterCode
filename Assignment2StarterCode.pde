@@ -6,7 +6,6 @@
     See: https://github.com/skooter500/DT228-OOP 
 */
 
-PVector gravity;
 ArrayList<GameObject> game_objects = new ArrayList<GameObject>();
 boolean[] keys = new boolean[526];
 
