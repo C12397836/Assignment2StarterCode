@@ -27,12 +27,6 @@ void draw()
   for(int i = 0; i < game_objects.size(); i++)
   {
     
-    if(game_objects.get(i) instanceof Player)
-    {
-      //game_objects.get(i).pos.add(gravity);
-    }
-    
-    
     game_objects.get(i).update();
     game_objects.get(i).display();
   } // End loop.

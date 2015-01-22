@@ -14,14 +14,19 @@ class Background extends GameObject
     if (landHeights.length>0) {
       landHeights = subset(landHeights, 1);
     }
-    while (landHeights.length < width / landSegmentWidth) {
+    while (landHeights.length < width / landSegmentWidth) 
+    {
       landHeights = append(landHeights, currentHeight);
       currentHeight += random(-5, 5);
-      if (currentHeight > height) {
+      if (currentHeight > height) 
+      {
         currentHeight = height;
-      } else if (currentHeight < 300) {
-        currentHeight = 300;
+      } 
+      else if (currentHeight < (height/2)+20) 
+      {
+        currentHeight = (height/2)+20;
       }
+      println(currentHeight);
     }
   }
 
