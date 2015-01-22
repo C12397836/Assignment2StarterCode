@@ -2,7 +2,7 @@ class Background extends GameObject
 {
 
   float[] landHeights = new float[0];
-  float landSegmentWidth = 1;
+  float landSegmentWidth = 10;
   float currentHeight = 800;
 
   Background()
@@ -12,7 +12,7 @@ class Background extends GameObject
   void update()
   {
     if (landHeights.length>0) {
-      landHeights = subset(landHeights, 5);
+      landHeights = subset(landHeights, 1);
     }
     while (landHeights.length < width / landSegmentWidth) 
     {
@@ -22,9 +22,9 @@ class Background extends GameObject
       {
         currentHeight = height;
       } 
-      else if (currentHeight < (height/2)+30) 
+      else if (currentHeight < (height/2)+20) 
       {
-        currentHeight = (height/2)+30;
+        currentHeight = (height/2)+20;
       }
       println(currentHeight);
     }
