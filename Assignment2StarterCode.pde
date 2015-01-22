@@ -29,12 +29,8 @@ void draw()
     
     game_objects.get(i).update();
     game_objects.get(i).display();
-    
-    if(game_objects.get(i) instanceof Player)
-    {
-      //game_objects.get(i).pos.x= game_objects.get(i+1).currentHeight;
-    }
   } // End loop.
+  
   
 }
 
