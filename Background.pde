@@ -1,9 +1,9 @@
 class Background extends GameObject
 {
 
-  float[] landHeights = new float[0];
+  float[] caveHeights = new float[0];
   float landSegmentWidth = 1;
-  float currentHeight = 800;
+  float currentHeight = 1000;
 
   Background()
   {
@@ -11,12 +11,12 @@ class Background extends GameObject
 
   void update()
   {
-    if (landHeights.length>0) {
-      landHeights = subset(landHeights, 5);
+    if (caveHeights.length>0) {
+      caveHeights = subset(caveHeights, 5);
     }
-    while (landHeights.length < width / landSegmentWidth) 
+    while (caveHeights.length < width / landSegmentWidth) 
     {
-      landHeights = append(landHeights, currentHeight);
+      caveHeights = append(caveHeights, currentHeight);
       currentHeight += random(-5, 5);
       if (currentHeight > height) 
       {
@@ -34,9 +34,9 @@ class Background extends GameObject
   {
     stroke(255);
     fill(255); 
-    for (int i = 0; i< landHeights.length; i++) {
-      rect(i*landSegmentWidth, 0, landSegmentWidth, height-landHeights[i]);
-      rect(i*landSegmentWidth, landHeights[i], landSegmentWidth, height);
+    for (int i = 0; i< caveHeights.length; i++) {
+      rect(i*landSegmentWidth, 0, landSegmentWidth, height-caveHeights[i]);
+      rect(i*landSegmentWidth, caveHeights[i], landSegmentWidth, height);
     }
   }
 }
