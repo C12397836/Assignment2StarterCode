@@ -90,6 +90,6 @@ class Player extends GameObject
   {    
     stroke(colour);
     fill(colour);    
-    rect(pos.x, pos.y, 20, 20);
+    ellipse(pos.x, pos.y, 20, 20);
   }  
 }

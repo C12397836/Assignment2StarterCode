@@ -15,7 +15,7 @@ class Background extends GameObject
     {
       caveHeights = subset(caveHeights, 5);
     }
-    while (caveHeights.length < width / landSegmentWidth) 
+    while (caveHeights.length < width / segmentWidth) 
     {
       caveHeights = append(caveHeights, currentHeight);
       currentHeight += random(-5, 5);
@@ -37,8 +37,8 @@ class Background extends GameObject
     fill(255); 
     for (int i = 0; i< caveHeights.length; i++) 
     {
-      rect(i*landSegmentWidth, 0, landSegmentWidth, height-caveHeights[i]);
-      rect(i*landSegmentWidth, caveHeights[i], landSegmentWidth, height);
+      rect(i*segmentWidth, 0, segmentWidth, height-caveHeights[i]);
+      rect(i*segmentWidth, caveHeights[i], segmentWidth, height);
     }
   }
 }

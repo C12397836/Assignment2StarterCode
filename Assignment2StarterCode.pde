@@ -12,7 +12,6 @@ boolean[] keys = new boolean[526];
 void setup()
 {
   size(600, 600);
-  gravity = new PVector(0, 2);
   
   game_objects.add(new Background());
   setUpPlayerControllers();
