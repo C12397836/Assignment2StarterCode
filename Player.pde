@@ -92,12 +92,12 @@ class Player extends GameObject
   {    
     stroke(colour);
     fill(colour);    
-    ellipse(pos.x, pos.y, 40, 20);
+    rect(pos.x-20, pos.y-10, 40, 15, 10);
     line(pos.x, pos.y, pos.x-40, pos.y);
     triangle(pos.x-40, pos.y, pos.x-50, pos.y, pos.x-50, pos.y-10);
     line(pos.x, pos.y, pos.x, pos.y-15);
     
-    if(s%3==1)
+    if(s%5==1)
     {
       line(pos.x-20, pos.y-10, pos.x+20, pos.y-20); //wings
       line(pos.x-20, pos.y-20, pos.x+20, pos.y-10); //wings
