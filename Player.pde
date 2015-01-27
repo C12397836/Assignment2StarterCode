@@ -48,6 +48,10 @@ class Player extends GameObject
   
   void update()
   {
+    if(alive==true)
+    {
+      score++;
+    }
     yVel *=0.96;
     if (checkKey(up))
     {

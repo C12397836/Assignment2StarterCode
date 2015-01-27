@@ -47,7 +47,9 @@ void draw()
       }
     }
     game_objects.get(1).update();
+    game_objects.get(1).colour=color(255,0,0);
     game_objects.get(2).update();
+    game_objects.get(2).colour=color(0,0,255);
   }
   // Loop through all the game objects
   if(gameState==2)
@@ -77,8 +79,22 @@ void draw()
         //}
         game_objects.get(i).update();
         game_objects.get(i).display();
+      }
+      stroke(0);
+      fill(255,0,0);
+      textSize(20);
+      if(mode==1)
+      {
+        fill(255,0,0);
+        text("Player1= "+game_objects.get(1).score+" metres", width-250, height-50);
+      }
+      if(mode==2)
+      {
+        fill(255,0,0);
+        text("Player1= "+game_objects.get(1).score+" metres", width-250, height-50);
+        fill(0,0,255);
+        text("Player2= "+game_objects.get(2).score+" metres", width-250, height-25);
       } 
-    
     // End loop.
   }
   if(gameState==3)
