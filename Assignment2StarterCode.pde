@@ -103,7 +103,7 @@ void draw()
     textSize(100);
     text("Game Over", 350, 200);
     textSize(50);
-    text("Main Menu", 300, 500);
+    text("Retry", 300, 500);
     if(mouseX>300 && mouseX<500 && mouseY>450 && mouseY<500)
     {
       textSize(20);
@@ -114,6 +114,9 @@ void draw()
         game_objects.get(1).alive=true;
         game_objects.get(2).alive=true;
         game_objects.get(1).pos.y=height/2;
+        game_objects.get(2).pos.y=height/2;
+        game_objects.get(1).score=0;
+        game_objects.get(2).score=0;
       }
     }
   }
