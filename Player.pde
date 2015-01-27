@@ -15,7 +15,7 @@ class Player extends GameObject
   {
     yVel = 0;
     speed = 5;
-    pos = new PVector(width / 2, height / 2);
+    pos = new PVector(width/2, height/2);
   }
   
   Player(int index, color colour, char up, char down, char left, char right, char start, char button1, char button2)
@@ -90,14 +90,6 @@ class Player extends GameObject
   
   void display()
   { 
-    if(pos.y>=height|| pos.y<=-50)
-    {
-      alive=!alive;
-      if(mode==1)
-      {
-        gameState=3;
-      }
-    }
     if(alive==true)
     {
       stroke(colour);

@@ -58,10 +58,20 @@ void draw()
       {
         if(game_objects.get(i) instanceof Player)
         {
+          if(game_objects.get(i).pos.y>height|| game_objects.get(i).pos.y<0)
+          {
+            game_objects.get(i).alive=false; 
+          }
+          
           if(mode==1)
           {
             game_objects.get(2).alive=false;
+            if(game_objects.get(1).alive==false)
+            {
+              gameState=3;
+            }
           }
+          
           if(mode==2 && game_objects.get(1).alive==false && game_objects.get(2).alive==false)
           {
             gameState=3;
