@@ -27,7 +27,6 @@ class Background extends GameObject
       {
         currentHeight = (height/2)+20;
       }
-      println(currentHeight);
     }
   }
 
