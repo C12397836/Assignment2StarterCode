@@ -1,11 +1,3 @@
-/*
-    DIT OOP Assignment 2 Starter Code
-    =================================
-    
-    Loads player properties from an xml file
-    See: https://github.com/skooter500/DT228-OOP 
-*/
-
 ArrayList<GameObject> game_objects = new ArrayList<GameObject>();
 boolean[] keys = new boolean[526];
 int gameState, mode;
@@ -17,7 +9,7 @@ void setup()
   game_objects.add(new Background());
   setUpPlayerControllers();
   
-  gameState=2;
+  gameState=1;
   mode=2;
 }
 
@@ -26,11 +18,37 @@ void draw()
   background(0);
   if(gameState==1)
   {
-    text("Start", 200, 200);
-    rect(300, 300, 100, 100);
-    if(mousePressed==true && mouseX>300 && mouseX<400 && mouseY>300 && mouseY<400)
+    PFont mono;
+    mono = loadFont("Stencil-48.vlw");
+    textFont(mono);  
+    textSize(100);
+    text("Start", 350, 200);
+    textSize(50);
+    text("1 Plyr", 300, 500);
+    text("2 Plyr", 600, 500);
+    if(mouseX>300 && mouseX<500 && mouseY>450 && mouseY<500)
     {
-      text("dddd", 200 ,300);
+      textSize(20);
+      text("Click to Start!", 300, 520);
+      if(mousePressed==true)
+      {
+        gameState=2;
+        mode=1;
+      }
+    }
+    if(mouseX>600 && mouseX<800 && mouseY>450 && mouseY<500)
+    {
+      textSize(20);
+      text("Click to Start!", 600, 520);
+      if(mousePressed==true)
+      {
+        gameState=2;
+        mode=2;
+      }
+    }
+    else
+    {
+      fill(255);
     }
   }
   // Loop through all the game objects
@@ -44,12 +62,22 @@ void draw()
           {
             game_objects.get(2).alive=false;
           }
+          if(mode==2 && game_objects.get(1).alive==false && game_objects.get(2).alive==false)
+          {
+            gameState=3;
+          }
         }
         game_objects.get(i).update();
         game_objects.get(i).display();
       } 
     
     // End loop.
+  }
+  if(gameState==3)
+  {
+    fill(255);
+    textSize(100);
+    text("Game Over", 350, 200);
   }
   
   

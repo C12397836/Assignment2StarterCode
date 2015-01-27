@@ -90,6 +90,14 @@ class Player extends GameObject
   
   void display()
   { 
+    if(pos.y>=height|| pos.y<=-50)
+    {
+      alive=!alive;
+      if(mode==1)
+      {
+        gameState=3;
+      }
+    }
     if(alive==true)
     {
       stroke(colour);
