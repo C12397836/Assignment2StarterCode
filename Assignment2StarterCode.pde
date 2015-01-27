@@ -58,7 +58,7 @@ void draw()
       {
         //if(game_objects.get(i) instanceof Player)
         //{
-          if(game_objects.get(i).pos.y>height|| game_objects.get(i).pos.y<0)
+          if(game_objects.get(i).pos.y>/*game_objects.get(1).currentHeight*/height|| game_objects.get(i).pos.y<0)
           {
             game_objects.get(i).alive=false; 
           }
