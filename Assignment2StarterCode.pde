@@ -46,18 +46,16 @@ void draw()
         mode=2;
       }
     }
-    else
-    {
-      fill(255);
-    }
+    game_objects.get(1).update();
+    game_objects.get(2).update();
   }
   // Loop through all the game objects
   if(gameState==2)
   {
       for(int i = 0; i < game_objects.size(); i++)
       {
-        if(game_objects.get(i) instanceof Player)
-        {
+        //if(game_objects.get(i) instanceof Player)
+        //{
           if(game_objects.get(i).pos.y>height|| game_objects.get(i).pos.y<0)
           {
             game_objects.get(i).alive=false; 
@@ -76,7 +74,7 @@ void draw()
           {
             gameState=3;
           }
-        }
+        //}
         game_objects.get(i).update();
         game_objects.get(i).display();
       } 
@@ -88,6 +86,20 @@ void draw()
     fill(255);
     textSize(100);
     text("Game Over", 350, 200);
+    textSize(50);
+    text("Main Menu", 300, 500);
+    if(mouseX>300 && mouseX<500 && mouseY>450 && mouseY<500)
+    {
+      textSize(20);
+      text("Click to Go!", 300, 520);
+      if(mousePressed==true)
+      {
+        gameState=1;
+        game_objects.get(1).alive=true;
+        game_objects.get(2).alive=true;
+        game_objects.get(1).pos.y=height/2;
+      }
+    }
   }
   
   

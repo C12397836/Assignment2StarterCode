@@ -3,7 +3,7 @@ class Background extends GameObject
 
   float[] caveHeights = new float[0];
   float segmentWidth = 1;
-  float currentHeight = 1000;
+  float currentHeight = height-50;
 
   Background()
   {
