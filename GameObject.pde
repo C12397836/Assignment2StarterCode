@@ -4,6 +4,7 @@ class GameObject
   PVector pos;
   float w, h, speed;
   color colour;
+  boolean alive;
   
   GameObject()
   {
@@ -11,6 +12,7 @@ class GameObject
     h = 0;
     colour = color(255);
     pos = new PVector(0, 0);
+    alive=true;
   } // End default constructor.
   
   

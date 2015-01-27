@@ -15,7 +15,7 @@ class Background extends GameObject
     {
       caveHeights = subset(caveHeights, 5);
     }
-    while (caveHeights.length < width / segmentWidth) 
+    while (caveHeights.length < width/segmentWidth) 
     {
       caveHeights = append(caveHeights, currentHeight);
       currentHeight += random(-5, 5);

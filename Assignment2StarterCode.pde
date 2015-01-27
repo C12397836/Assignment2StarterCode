@@ -8,26 +8,49 @@
 
 ArrayList<GameObject> game_objects = new ArrayList<GameObject>();
 boolean[] keys = new boolean[526];
+int gameState, mode;
 
 void setup()
 {
-  size(600, 600);
+  size(1020, 600);
   
   game_objects.add(new Background());
   setUpPlayerControllers();
+  
+  gameState=2;
+  mode=2;
 }
 
 void draw()
-{
+{ 
   background(0);
-  
-  // Loop through all the game objects
-  for(int i = 0; i < game_objects.size(); i++)
+  if(gameState==1)
   {
+    text("Start", 200, 200);
+    rect(300, 300, 100, 100);
+    if(mousePressed==true && mouseX>300 && mouseX<400 && mouseY>300 && mouseY<400)
+    {
+      text("dddd", 200 ,300);
+    }
+  }
+  // Loop through all the game objects
+  if(gameState==2)
+  {
+      for(int i = 0; i < game_objects.size(); i++)
+      {
+        if(game_objects.get(i) instanceof Player)
+        {
+          if(mode==1)
+          {
+            game_objects.get(2).alive=false;
+          }
+        }
+        game_objects.get(i).update();
+        game_objects.get(i).display();
+      } 
     
-    game_objects.get(i).update();
-    game_objects.get(i).display();
-  } // End loop.
+    // End loop.
+  }
   
   
 }
