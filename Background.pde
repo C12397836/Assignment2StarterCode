@@ -3,7 +3,7 @@ class Background extends GameObject
 
   float[] caveHeights = new float[0];
   float segmentWidth = 1;
-  float currentHeight = height-50;
+  float currentHeight =800;
 
   Background()
   {
@@ -39,6 +39,12 @@ class Background extends GameObject
       rect(i*segmentWidth, 0, segmentWidth, height-caveHeights[i]);
       rect(i*segmentWidth, caveHeights[i], segmentWidth, height);
     }
+    /*for(int i=0; i<caveHeights.length; i++)
+    { 
+      caveHeights[i]=currentHeight+(int)random(-5,5);
+      currentHeight=caveHeights[i];
+      rect(i*segmentWidth, height, segmentWidth, caveHeights[i]);
+    }*/
   }
 }
 
