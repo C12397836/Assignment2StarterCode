@@ -10,6 +10,7 @@ class Player extends GameObject
   char button2;
   int index;
   float yVel;
+  int theta;
     
   Player()
   {
@@ -69,10 +70,12 @@ class Player extends GameObject
     if (checkKey(left))
     {
       pos.x -= speed;
+      theta=-100;
     }    
     if (checkKey(right))
     {
       pos.x += speed;
+      theta=100;
     }
     if (checkKey(start))
     {
@@ -96,6 +99,9 @@ class Player extends GameObject
   { 
     if(alive==true)
     {
+      /*pushMatrix();
+      translate(pos.x,pos.y );
+      rotate(theta);*/
       stroke(colour);
       fill(colour);    
       rect(pos.x-20, pos.y-10, 40, 15, 10);
@@ -117,6 +123,7 @@ class Player extends GameObject
       line(pos.x-10, pos.y, pos.x-10, pos.y+12); //legs
       line(pos.x+10, pos.y, pos.x+10, pos.y+12); //legs
       line(pos.x-15, pos.y+12, pos.x+15, pos.y+12); //legs
+      //popMatrix();
     }
   }  
 }
