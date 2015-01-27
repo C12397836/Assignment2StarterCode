@@ -99,6 +99,40 @@ void draw()
   }
   if(gameState==3)
   {
+    if(mode==1)
+    {
+      String strscore = str(game_objects.get(1).score);
+      String[] list = split(strscore, ' ');
+      
+      saveStrings("highScore.txt", list);
+      
+      String lines[] = loadStrings("highScore.txt");
+      for (int i = 0 ; i < lines.length; i++) 
+      {
+        textSize(20);
+        text("HighScores", 400, 300);
+        text(lines[i], 400, 350);
+      }
+    }
+    
+    if(mode==2)
+    {
+      String strscore = str(game_objects.get(1).score);
+      String strscore2 = str(game_objects.get(2).score);
+      String[] list = split(strscore, ' ');
+      String[] list2 = split(strscore2, ' ');
+      
+      saveStrings("highScore.txt", list);
+      saveStrings("highScore.txt", list2);
+      
+      String lines[] = loadStrings("highScore.txt");
+      for (int i = 0 ; i < lines.length; i++) 
+      {
+        textSize(20);
+        text("HighScores", 500, 300);
+        text(lines[i], 500, 350);
+      }
+    }
     fill(255);
     textSize(100);
     text("Game Over", 350, 200);
