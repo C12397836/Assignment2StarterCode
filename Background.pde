@@ -32,8 +32,8 @@ class Background extends GameObject
 
   void display()
   {
-    stroke(255);
-    fill(255); 
+    stroke(#646464);
+    fill(#646464); 
     for (int i = 0; i< caveHeights.length; i++) 
     {
       rect(i*segmentWidth, 0, segmentWidth, height-caveHeights[i]);

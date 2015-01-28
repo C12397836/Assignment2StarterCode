@@ -106,7 +106,7 @@ class Player extends GameObject
       fill(colour);    
       rect(pos.x-20, pos.y-10, 40, 15, 10);
       line(pos.x, pos.y, pos.x-40, pos.y);
-      triangle(pos.x-40, pos.y, pos.x-50, pos.y, pos.x-50, pos.y-10);
+      rect(pos.x-45, pos.y-10, 5, 10, 5);
       line(pos.x, pos.y, pos.x, pos.y-15);
       
       if(s%5==1)
@@ -123,6 +123,10 @@ class Player extends GameObject
       line(pos.x-10, pos.y, pos.x-10, pos.y+12); //legs
       line(pos.x+10, pos.y, pos.x+10, pos.y+12); //legs
       line(pos.x-15, pos.y+12, pos.x+15, pos.y+12); //legs
+      
+      fill(0);
+      rect(pos.x+5, pos.y-5, 15, 5);
+      rect(pos.x-12, pos.y-5, 15, 10);
       //popMatrix();
     }
   }  

@@ -26,6 +26,10 @@ void draw()
     textSize(50);
     text("1 Plyr", 300, 500);
     text("2 Plyr", 600, 500);
+    textSize(20);
+    text("See how far you can make it through the cave!", 250, 300);
+    text("Control the helicopter and dont crash!", 300, 350);
+    text("Choose mode below, 1 or 2 player!", 340, 400);
     if(mouseX>300 && mouseX<500 && mouseY>450 && mouseY<500)
     {
       textSize(20);
@@ -61,6 +65,14 @@ void draw()
           if(game_objects.get(i).pos.y>/*game_objects.get(1).currentHeight*/height|| game_objects.get(i).pos.y<0)
           {
             game_objects.get(i).alive=false; 
+          }
+          if(game_objects.get(i).pos.x>width-30)
+          {
+            game_objects.get(i).pos.x=game_objects.get(i).pos.x-5; 
+          }
+          if(game_objects.get(i).pos.x<50)
+          {
+            game_objects.get(i).pos.x=game_objects.get(i).pos.x+5;
           }
           
           if(mode==1)
