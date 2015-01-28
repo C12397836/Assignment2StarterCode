@@ -44,6 +44,11 @@ class Background extends GameObject
       caveHeights[i]=currentHeight+(int)random(-5,5);
       currentHeight=caveHeights[i];
       rect(i*segmentWidth, height, segmentWidth, caveHeights[i]);
+    }
+    for(int i=0; i<caveHeights.size(); i++)
+    {
+      caveHeights.add(int[currentHeight+random(-5,5)]);
+      caveHeights.remove(currentHeight-width);
     }*/
   }
 }
